@@ -19,6 +19,10 @@ public:
 		std::cout << "Creating a Lot\n";
 	}
 	virtual void show() = 0;
+	~Lot()
+	{
+		std::cout << "Destructing a Lot\n";
+	}
 
 };
 
@@ -40,18 +44,23 @@ public:
 
 	}
 	virtual void show() = 0;
+	~ParkingSpaces()
+	{
+		std::cout << "Destructing parking spaces\n";
+	}
 };
 
 class ParkingLot : public Lot, public ParkingSpaces
 {
 public:
-	void show()
-	{
-		std::cout << "ceva";
-	}
+	void show() {}
 	ParkingLot()
 	{
 		std::cout << "Creating Parking Lot\n";
+	}
+	~ParkingLot()
+	{
+		std::cout << "Destructing Parking Lot\n";
 	}
 };
 
